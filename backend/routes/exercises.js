@@ -55,9 +55,9 @@ router.route("/update/:id").post((req, res) => {
       exercise
         .save()
         .then(() => res.json("Exercise updated!"))
-        .catch((err) => res.status(400).json("Error: " + err));
+        .catch((err) => res.json("Error saving exercise", err));
     })
-    .catch((err) => res.status(400).json("Error: " + err));
+    .catch((err) => res.json("Error finding exercise in database", err));
 });
 
 module.exports = router;

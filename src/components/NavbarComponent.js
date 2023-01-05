@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const navbarComponent = () => {
+const NavbarComponent = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success mt-4 rounded-3">
       <div className="d-flex flex-column flex-lg-row container-fluid justify-content-center">
@@ -33,4 +33,4 @@ const navbarComponent = () => {
   );
 };
 
-export default navbarComponent;
+export default NavbarComponent;

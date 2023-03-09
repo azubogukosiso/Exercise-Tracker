@@ -12,7 +12,7 @@ const CreateExerciseComponent = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users/").then((response) => {
+    axios.get("http://localhost:5001/users/").then((response) => {
       if (response.data.length > 0) {
         setUsers(response.data.map((user) => user.username));
         setUsername(response.data[0].username);
@@ -32,7 +32,7 @@ const CreateExerciseComponent = () => {
     console.log(exercise);
 
     axios
-      .post("http://localhost:5000/exercises/add", exercise)
+      .post("http://localhost:5001/exercises/add", exercise)
       .then((res) => console.log(res.data));
 
     window.location = "/";

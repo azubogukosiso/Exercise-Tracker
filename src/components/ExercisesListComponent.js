@@ -7,7 +7,7 @@ const ExercisesListComponent = () => {
     const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('http://localhost:5001/exercises/')
             .then(response => {
                 if (response.data.length > 0) {
                     setExercises(response.data.map(exercise => exercise));
@@ -16,7 +16,7 @@ const ExercisesListComponent = () => {
     }, [])
 
     const deleteExercise = (id) => {
-        axios.delete('http://localhost:5000/exercises/' + id)
+        axios.delete('http://localhost:5001/exercises/' + id)
             .then(res => console.log(res.data));
 
         setExercises(exercises.filter(el => el._id !== id));

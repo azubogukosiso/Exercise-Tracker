@@ -15,14 +15,14 @@ const EditExerciseComponent = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/exercises/" + id).then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}exercises/` + id).then((response) => {
       setUsername(response.data.username);
       setDescription(response.data.description);
       setDuration(response.data.duration);
       setDate(new Date(response.data.date));
     }, []);
 
-    axios.get("http://localhost:5001/users/").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}users/`).then((response) => {
       if (response.data.length > 0) {
         setUsers(response.data.map((user) => user.username));
       }
@@ -42,7 +42,7 @@ const EditExerciseComponent = () => {
     console.log(exercise);
 
     axios
-      .post("http://localhost:5001/exercises/update/" + id, exercise)
+      .post(`${process.env.REACT_APP_API_URL}exercises/update/` + id, exercise)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
 

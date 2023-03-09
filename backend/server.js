@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 
 // route imports
 const exercisesRouter = require("./routes/exercises");
@@ -17,8 +19,8 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function () {
   console.log("connection successful!");
-  app.listen(5001, () => {
-    console.log("server is running at port 5001");
+  app.listen(process.env.API_PORT, () => {
+    console.log("server is running at port " + process.env.API_PORT);
   });
 });
 

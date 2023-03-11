@@ -2,11 +2,11 @@
     "rewrites": [
         {
             "source": "/exercises/(.*)",
-            "destination": "/api/exercises"
+            "destination": "/backend/exercises"
         },
         {
             "source": "/users/(.*)",
-            "destination": "/api/users"
+            "destination": "/backend/users"
         }
     ]
 }

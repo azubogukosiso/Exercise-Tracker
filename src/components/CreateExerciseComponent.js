@@ -16,6 +16,8 @@ const CreateExerciseComponent = () => {
       if (response.data.length > 0) {
         setUsers(response.data.map((user) => user.username));
         setUsername(response.data[0].username);
+      } else {
+        console.log("No users");
       }
     });
   }, []);

@@ -11,16 +11,14 @@ const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 
 // connection to the dbase
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL_2, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function () {
-  if (process.env.API_PORT) {
-    app.listen(process.env.API_PORT);
-  }
+  app.listen(process.env.API_PORT);
 });
 
 app.use(cors());

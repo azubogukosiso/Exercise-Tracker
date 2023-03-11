@@ -12,10 +12,11 @@ const CreateUserComponent = () => {
       username,
     };
 
-    axios.post(`${process.env.REACT_APP_API_URL}users/add`, user).then((res) => {
-      setMsg(res.data);
-      setUsername("");
-    });
+    axios.post(`${process.env.REACT_APP_API_URL}users/add`, user)
+      .then((res) => {
+        setMsg(res.data);
+        setUsername("");
+      });
   };
 
   return (

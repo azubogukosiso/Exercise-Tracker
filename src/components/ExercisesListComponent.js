@@ -11,6 +11,8 @@ const ExercisesListComponent = () => {
             .then(response => {
                 if (response.data.length > 0) {
                     setExercises(response.data.map(exercise => exercise));
+                } else {
+                    console.log("No exercises");
                 }
             })
     }, [])

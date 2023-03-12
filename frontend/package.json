@@ -1,6 +1,5 @@
 {
-  "homepage": "https://exercise-tracker-neon.vercel.app",
-  "name": "react-movie-app",
+  "name": "exercise-tracker-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

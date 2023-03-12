@@ -6,12 +6,10 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const EditExerciseComponent = () => {
   const { id } = useParams();
-  console.log(id);
   const [username, setUsername] = useState("");
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState(new Date());
-  const [startDate, setStartDate] = useState(new Date());
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -27,8 +25,7 @@ const EditExerciseComponent = () => {
         setUsers(response.data.map((user) => user.username));
       }
     });
-    // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();

@@ -7,7 +7,6 @@ const CreateExerciseComponent = () => {
   const [username, setUsername] = useState("");
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
-  const [date, setDate] = useState(new Date());
   const [startDate, setStartDate] = useState(new Date());
   const [users, setUsers] = useState([]);
 
@@ -90,8 +89,7 @@ const CreateExerciseComponent = () => {
             <DatePicker
               selected={Date.parse(startDate)}
               onChange={(startDate) => setStartDate(startDate)}
-              minDate={date}
-              role="button"
+              minDate={new Date()}
             />
           </div>
         </div>
